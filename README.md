@@ -7,25 +7,22 @@
 
 Panoptic SegFormer is accepted by CVPR'22 and we update our latest paper on [arXiv](https://arxiv.org/abs/2109.03814)
 
-
-## Results
-
-results on COCO val
-
-| Backbone | Method | Lr Schd | PQ | Config | Download |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| R-50  | Panoptic-SegFormer | 1x| 48.0 |[config](configs/panformer/panformer_r50_12e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_r50_1x.pth) |
-| R-50  | Panoptic-SegFormer | 2x| 49.6 |[config](configs/panformer/panformer_r50_24e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_r50_2x.pth) |
-| R-101  | Panoptic-SegFormer | 2x| 50.6 |[config](configs/panformer/panformer_r101_24e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_r101_2x.pth)  |
-| [PVTv2-B5](https://github.com/whai362/PVT) (**much lighter**)  | Panoptic-SegFormer | 2x| 55.6 |[config](configs/panformer/panformer_pvtb5_24e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_pvtv2b5_2x.pth) |
-| Swin-L (window size 7)  | Panoptic-SegFormer | 2x| 55.8 |[config](configs/panformer/panformer_swinl_24e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_swinl_2x.pth) |
-
-
-
-
 ## Install
 
-###  Prerequisites
+### Windows installation:
+
+With conda or miniconda installed:
+1. `conda env create -f environment.yaml`
+2. `conda activate panformer`
+3. `git clone https://github.com/open-mmlab/mmcv.git`
+4. `cd mmcv`
+5. `$env:MMCV_WITH_OPS=1`
+6. `python setup.py build_ext`
+7. `python setup.py develop`
+
+### Linux Install
+
+####  Prerequisites
 
 - Linux
 - Python 3.6+
@@ -43,11 +40,25 @@ results on COCO val
 note: PyTorch1.8 has a bug in its [adamw.py](https://github.com/pytorch/pytorch/blob/v1.8.0/torch/optim/adamw.py) and it is solved in PyTorch1.9([see](https://github.com/pytorch/pytorch/blob/master/torch/optim/adamw.py)), you can easily solve it by comparing the difference.
 
 
-### install Panoptic SegFormer
+#### install Panoptic SegFormer
 
 ```
 python setup.py install 
 ```
+
+## Results
+
+results on COCO val
+
+| Backbone | Method | Lr Schd | PQ | Config | Download |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| R-50  | Panoptic-SegFormer | 1x| 48.0 |[config](configs/panformer/panformer_r50_12e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_r50_1x.pth) |
+| R-50  | Panoptic-SegFormer | 2x| 49.6 |[config](configs/panformer/panformer_r50_24e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_r50_2x.pth) |
+| R-101  | Panoptic-SegFormer | 2x| 50.6 |[config](configs/panformer/panformer_r101_24e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_r101_2x.pth)  |
+| [PVTv2-B5](https://github.com/whai362/PVT) (**much lighter**)  | Panoptic-SegFormer | 2x| 55.6 |[config](configs/panformer/panformer_pvtb5_24e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_pvtv2b5_2x.pth) |
+| Swin-L (window size 7)  | Panoptic-SegFormer | 2x| 55.8 |[config](configs/panformer/panformer_swinl_24e_coco_panoptic.py) | [model](https://github.com/zhiqi-li/Panoptic-SegFormer/releases/download/v1.0/panoptic_segformer_swinl_2x.pth) |
+
+
 
 
 ## Datasets 

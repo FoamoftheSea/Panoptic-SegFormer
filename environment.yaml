@@ -1,0 +1,23 @@
+name: panformer
+
+channels:
+  - pytorch
+dependencies:
+  - python=3.6
+  - pip=21.2.2
+  - pytorch==1.8.1
+  - torchvision
+  - cudatoolkit=10.2
+  - pip:
+    - mmdet==2.12.0
+    - timm==0.4.5
+    - pycocotools
+    - einops==0.3.0
+    - yapf
+    - Pillow==8.0.1
+    - opencv-python==4.5.1.48
+    - cityscapesscripts
+    - wandb
+    - seaborn
+    - ninja
+    - psutil
