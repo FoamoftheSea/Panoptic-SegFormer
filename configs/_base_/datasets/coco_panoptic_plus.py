@@ -35,15 +35,17 @@ data = dict(
     train=dict(
         type=dataset_type,
         ann_file= './datasets/annotations/panoptic_train2017_detection_format.json',
+        gt_json='./datasets/annotations/panoptic_train2017.json',
+        gt_folder = './datasets/annotations/panoptic_train2017',
         img_prefix=data_root + 'train2017/',
         pipeline=train_pipeline),
-    val=dict( 
-      
+    val=dict(
         segmentations_folder='./seg',
         gt_json = './datasets/annotations/panoptic_val2017.json',
         gt_folder = './datasets/annotations/panoptic_val2017',
         type=dataset_type,
-        ann_file=data_root + 'annotations/instances_val2017.json',
+        # ann_file=data_root + 'annotations/instances_val2017.json',
+        ann_file='./datasets/annotations/panoptic_val2017_detection_format.json',
         img_prefix=data_root + 'val2017/',
         pipeline=test_pipeline),
     test=dict(
@@ -51,11 +53,12 @@ data = dict(
         gt_json = './datasets/annotations/panoptic_val2017.json',
         gt_folder = './datasets/annotations/panoptic_val2017',
         type=dataset_type,
-        #ann_file= './datasets/coco/annotations/image_info_test-dev2017.json',
-        ann_file=data_root + 'annotations/instances_val2017.json',
-        #img_prefix=data_root + '/test2017/',
+        # ann_file= './datasets/coco/annotations/image_info_test-dev2017.json',
+        # ann_file=data_root + 'annotations/instances_val2017.json',
+        ann_file='./datasets/annotations/panoptic_val2017_detection_format.json',
+        # img_prefix=data_root + '/test2017/',
         img_prefix=data_root + 'val2017/',
         pipeline=test_pipeline)
         )
 evaluation = dict(metric=['bbox', 'segm', 'panoptic'])
-#evaluation = dict(interval=1, metric='bbox')
+# evaluation = dict(interval=1, metric='bbox')
