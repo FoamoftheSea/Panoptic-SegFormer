@@ -16,9 +16,10 @@ With conda or miniconda installed:
 2. `conda activate panformer`
 3. `git clone https://github.com/open-mmlab/mmcv.git`
 4. `cd mmcv`
-5. `$env:MMCV_WITH_OPS=1`
-6. `python setup.py build_ext`
-7. `python setup.py develop`
+5. `git checkout v1.3.4`
+6. `$env:MMCV_WITH_OPS=1`
+7. `python setup.py build_ext`
+8. `python setup.py develop`
 
 ### Linux Install
 
